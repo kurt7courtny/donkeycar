@@ -501,6 +501,13 @@ def drive(cfg, model_path=None, use_joystick=False, model_type=None, camera_type
         V.add(steering, inputs=['angle'])
         V.add(motor, inputs=["throttle"])
 
+    elif cfg.DRIVE_TRAIN_TYPE == "MY_DONKEY":
+        from donkeycar.parts.actuator import RPi_GPIO_Servo, L298N_HBridge_DC_Motor
+        steering = RPi_GPIO_Servo( STEERING_PIN_PWM, STEERING_MIN, STEERING_MAX)
+        motor = L298N_HBridge_DC_Motor( HBRIDGE_PIN_FWD, HBRIDGE_PIN_BWD, HBRIDGE_PIN_PWM)
+
+        V.add(steering, inputs=['angle'])
+        V.add(motor, inputs=["throttle"])
     
     #add tub to save data
 
@@ -517,7 +524,6 @@ def drive(cfg, model_path=None, use_joystick=False, model_type=None, camera_type
         types += ['int', 'str', 'vector']
     
     if cfg.HAVE_IMU:
-        `   
         inputs += ['imu/acl_x', 'imu/acl_y', 'imu/acl_z',
             'imu/gyr_x', 'imu/gyr_y', 'imu/gyr_z']
 

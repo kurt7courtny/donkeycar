@@ -20,7 +20,7 @@
 # MAX_LOOPS = None        # the vehicle loop can abort after this many iterations, when given a positive integer.
 # 
 # #CAMERA
-CAMERA_TYPE = "MOCK"   # (PICAM|WEBCAM|CVCAM|CSIC|V4L|MOCK)
+CAMERA_TYPE = "WEBCAM"   # (PICAM|WEBCAM|CVCAM|CSIC|V4L|MOCK)
 # IMAGE_W = 160
 # IMAGE_H = 120
 # IMAGE_DEPTH = 3         # default RGB=3, make 1 for mono
@@ -37,8 +37,8 @@ CAMERA_TYPE = "MOCK"   # (PICAM|WEBCAM|CVCAM|CSIC|V4L|MOCK)
 # #DC_STEER_THROTTLE uses HBridge pwm to control one steering dc motor, and one drive wheel motor
 # #DC_TWO_WHEEL uses HBridge pwm to control two drive motors, one on the left, and one on the right.
 # #SERVO_HBRIDGE_PWM use ServoBlaster to output pwm control from the PiZero directly to control steering, and HBridge for a drive motor.
-# DRIVE_TRAIN_TYPE = "SERVO_ESC" # SERVO_ESC|DC_STEER_THROTTLE|DC_TWO_WHEEL|SERVO_HBRIDGE_PWM
-DRIVE_TRAIN_TYPE = "None"
+# DRIVE_TRAIN_TYPE = "SERVO_ESC" # SERVO_ESC|DC_STEER_THROTTLE|DC_TWO_WHEEL|SERVO_HBRIDGE_PWM|MY_DONKEY
+DRIVE_TRAIN_TYPE = "MY_DONKEY"
 # 
 # #STEERING
 # STEERING_CHANNEL = 1            #channel on the 9685 pwm board 0-15
@@ -65,6 +65,14 @@ DRIVE_TRAIN_TYPE = "None"
 # HBRIDGE_PIN_RIGHT_FWD = 15
 # HBRIDGE_PIN_RIGHT_BWD = 13
 # 
+# #MY_DONKEY GPIO pin for steering L298N module for motor
+STEERING_PIN_PWM = 31
+STEERING_MIN = 5.0
+STEERING_MAX = 7.8
+HBRIDGE_PIN_FWD = 35
+HBRIDGE_PIN_BWD = 36
+HBRIDGE_PIN_PWM = 33
+
 # 
 # #TRAINING
 # #The DEFAULT_MODEL_TYPE will choose which model will be created at training time. This chooses
