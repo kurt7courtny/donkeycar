@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\donkeycar",
+    "\\donkeycar\\management\\tub_web",
+    "\\donkeycar\\management\\tub_web\\static\\ui",
+    "\\donkeycar\\parts",
+    "\\donkeycar\\parts\\web_controller",
+    "\\donkeycar\\parts\\web_controller\\templates",
+    "\\donkeycar\\parts\\web_controller\\templates\\static",
+    "\\install",
+    "\\mycar"
+  ],
+  "SelectedNode": "\\donkeycar\\parts\\web_controller\\templates\\vehicle.html",
+  "PreviewInSolutionExplorer": false
+}
