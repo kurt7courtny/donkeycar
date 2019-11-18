@@ -503,7 +503,7 @@ def drive(cfg, model_path=None, use_joystick=False, model_type=None, camera_type
 
     elif cfg.DRIVE_TRAIN_TYPE == "MY_DONKEY":
         from donkeycar.parts.actuator import RPi_GPIO_Servo, L298N_HBridge_DC_Motor
-        steering = RPi_GPIO_Servo( cfg.STEERING_PIN_PWM, cfg.STEERING_MIN, cfg.STEERING_MAX)
+        steering = RPi_GPIO_Servo( cfg.STEERING_PIN_PWM, 50, cfg.STEERING_MIN, cfg.STEERING_MAX)
         motor = L298N_HBridge_DC_Motor( cfg.HBRIDGE_PIN_FWD, cfg.HBRIDGE_PIN_BWD, cfg.HBRIDGE_PIN_PWM)
 
         V.add(steering, inputs=['angle'])
